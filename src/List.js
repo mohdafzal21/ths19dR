@@ -1,7 +1,8 @@
 import React from 'react';
 class List extends React.Component {
 	state = {
-		query: ''
+		query: '',
+		isEdit: false
 	};
 	updateQuery = (event) => {
 		this.setState({
@@ -15,7 +16,7 @@ class List extends React.Component {
 	};
 	render() {
 		const { contacts, removeContacts } = this.props;
-		const { query } = this.state;
+		const { query, isEdit } = this.state;
 		const showContacts =
 			query == '' ? contacts : contacts.filter((c) => c.name.toLowerCase().includes(query.toLowerCase()));
 		return (
@@ -34,11 +35,18 @@ class List extends React.Component {
 				<h1>List </h1>
 				{showContacts.map((contact) => (
 					<div style={{ border: ' 2px dashed red' }} key={contact.id}>
-						<h2>
-							{contact.name} : {contact.handle}
-						</h2>
-						<img alt={contact.name} src={contact.avatarURL} style={{ width: '300px', height: '200px' }} />
-						<button onClick={() => removeContacts(contact)}>Remove Item</button>
+						<div>
+							<h2>
+								{contact.name} : {contact.handle}
+							</h2>
+							<img
+								alt={contact.name}
+								src={contact.avatarURL}
+								style={{ width: '300px', height: '200px' }}
+							/>
+
+							<button onClick={() => removeContacts(contact)}>Remove Item</button>
+						</div>
 					</div>
 				))}
 			</div>

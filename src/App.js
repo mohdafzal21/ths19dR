@@ -6,6 +6,9 @@ import Counter from './Counter';
 import List from './List';
 import User from './CF';
 import NameForm from './Uf';
+import Toggle from './Toggle';
+import Timer from './Timer';
+import Zen from './Zen';
 class App extends React.Component {
 	state = {
 		count: 0,
@@ -31,6 +34,14 @@ class App extends React.Component {
 		]
 	};
 
+	AddList = (listItem) => {
+		console.log('inside line no35 App component APP', listItem);
+
+		this.setState({
+			contacts: [ ...this.state.contacts, listItem ]
+		});
+	};
+
 	increment = () => {
 		console.log('hello', this);
 		this.setState({
@@ -54,14 +65,8 @@ class App extends React.Component {
 		const { count, contacts } = this.state;
 		return (
 			<div>
-				<User />
-				<hr />
-				<h1>Uncontrolled Form </h1>
-				<NameForm />
-				<hr />
-				<Counter count={count} increment={this.increment} decrement={this.decrement} />
-				<hr />
-				<List contacts={contacts} removeContacts={this.removeContacts} />
+				<Timer />
+				{/* <Zen name={'afzal'} /> */}
 			</div>
 		);
 	}
