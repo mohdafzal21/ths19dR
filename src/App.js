@@ -9,6 +9,7 @@ import NameForm from './Uf';
 import Toggle from './Toggle';
 import Timer from './Timer';
 import Zen from './Zen';
+import P0 from './P0';
 class App extends React.Component {
 	state = {
 		count: 0,
@@ -65,7 +66,7 @@ class App extends React.Component {
 		const { count, contacts } = this.state;
 		return (
 			<div>
-				<Timer />
+				<P0 />
 				{/* <Zen name={'afzal'} /> */}
 			</div>
 		);

@@ -26,7 +26,7 @@ class Timer extends React.Component {
 		console.log('Inside render');
 		return (
 			<div>
-				<h1>Time{this.state.time.getSeconds()} </h1>
+				<h1 className="display-1">Time{this.state.time.getSeconds()} </h1>
 			</div>
 		);
 	}
