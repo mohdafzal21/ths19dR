@@ -18,12 +18,9 @@ class Timer extends React.Component {
 		}, 1000);
 	}
 
-	componentWillUnmount() {
-		this.timerId.clearInterval();
-	}
 
 	render() {
-		console.log('Inside render');
+		console.log('Inside render' , this.props);
 		return (
 			<div>
 				<h1 className="display-1">Time{this.state.time.getSeconds()} </h1>
